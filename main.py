@@ -174,6 +174,19 @@ if __name__ == '__main__':
         clients.change_client_data()
 
         for m in range(10):
+            query_change = input('Клиенту с каким id обновить номер телефона?: ')
+            if query_change.lower() != 'не обновлять':
+                print('')
+                print(f'Обновление телефона клиента с номером {query_change}')
+                print('')
+                records_to_update = (query_change)
+                clients.update_phone(records_to_update)
+                print(f'Данные клиента {query_change} успешно обновлены')
+                print('')
+            else:
+                break
+
+        for m in range(10):
             query_change = input('Клиенту с каким id удалить номер телефона?: ')
             if query_change.lower() != 'не удалять':
                 print('')
